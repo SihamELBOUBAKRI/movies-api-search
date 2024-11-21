@@ -14,8 +14,8 @@ function App() {
 
   const searchbutton = async (e)=>{
     e.preventDefault();
-    const data = await axios.get(`https://api.themoviedb.org/3/search/tv?query=${movieName}g&api_key=fef55a6754f2f6d00a0038388915039c`)
-    setsearch(data.data.results);
+    const data = await axios.get(`https://api.themoviedb.org/3/search/tv?query=${movieName}&api_key=fef55a6754f2f6d00a0038388915039c`)
+    console.log(data.data.results);
 
   }
   return (
@@ -30,7 +30,6 @@ function App() {
           search.map((movie)=>{
             return(
               <div key={movie.id}>
-                console.log({movie.name})
                 <h1>{movie.name}</h1>
               </div>
             )
